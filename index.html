@@ -16,37 +16,139 @@
   <header>
     <nav>
       <h2>Cristy Mae E-Portfolio</h2>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
       <!-- Dynamic Target 1: Dark Mode Toggle -->
-      <button id="theme-btn">Toggle Dark Mode</button>
+      <button id="theme-btn" type="button">Toggle Dark Mode</button>
     </nav>
   </header>
 
   <main>
     <section id="hero">
-      <h1>Welcome to My E-Portfolio</h1>
-      <p>1st Year Information Technology Student</p>
+      <div class="hero-text">
+        <p class="script">Creative Portfolio</p>
+        <h1>Welcome to My <br>E-Portfolio</h1>
+        <p>1st Year Information Technology Student</p>
+        <a class="btn-link" href="#projects">See my projects</a>
+      </div>
+      <div class="stamp stamp-lg">
+      <img src="images/my-photo.jpg" alt="Portrait of Cristy Mae">
+    </div>
+      <span class="sparkle s1" aria-hidden="true"></span>
+      <span class="sparkle s2" aria-hidden="true"></span>
     </section>
 
-    <section id="projects">
-      <h2>Featured Projects</h2>
-      <div class="card">
-        <h3>Web Integration Lab</h3>
-        <p>A demonstration of linking HTML, CSS, and JS.</p>
+    <section id="about" class="panel">
+      <h2>About Me</h2>
+      <div class="two-col">
+        <p>Hi! I'm Cristy Mae though most people just call me Cristy or Cris. I'm an 18-year-old first-year Information Technology student and an older sibling. I have an endless curiosity and love learning fascinating facts about everything around us, whether living or non-living.</p>
+        <p>Beyond tech, I'm passionate about advocating for gender equality and empowering others to speak up for their rights. In my web development journey, I enjoy turning creative ideas into functional websites while mastering how HTML, CSS, and JavaScript work together.</p>
       </div>
     </section>
 
+    <section id="education" class="panel">
+      <h2>Education</h2>
+      <div class="grid-3">
+        <article class="pill-card">
+          <span class="pill">Senior High School</span>
+          <h3>Santo Tomas National High School  </h3>
+          <p>Humanities and Social Science <br>Graduated on Year 2026 with High Honors</p>
+        </article>
+        <article class="pill-card">
+          <span class="pill">College</span>
+          <h3>BS Information Technology</h3>
+          <p>Currently in 1st year. <br>  University of the Immaculate Conception</p>
+        </article>
+      </div>
+    </section>
 
-    <section id="contact">
+    <section id="skills" class="panel">
+      <h2>Personal Skills</h2>
+      <ul class="skill-list">
+        <li>
+          <span class="pill">Effective Communication</span>
+          <p>Explaining ideas clearly in group work and presentations.</p>
+        </li>
+         <li>
+          <span class="pill">Dancing</span>
+          <p>Learning and mastering choreographies quickly using visual observation, and rhythm counting.</p>
+        </li>
+        <li>
+          <span class="pill">Memorization</span>
+          <p>Using techniques like flashcards, spaced repetition, and active recall to quickly memorize and retain key information.</p>
+        </li>
+        <li>
+          <span class="pill">Alternative Solution</span>
+          <p>An secondary method or backup approach used when the primary strategy is limited by time, resources, or technical constraints.</p>
+        </li>
+      </ul>
+    </section>
+
+      <section id="hobbies" class="panel">
+      <h2>Hobbies</h2>
+      <ul class="pill-row">
+        <li class="pill">Crocheting</li>
+        <li class="pill">Painting</li>
+        <li class="pill">Reading Books</li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2 class="on-bg">Featured Projects</h2>
+      <div class="grid-3">
+        <div class="card">
+          <div class="stamp" aria-hidden="true"><span>1</span></div>
+          <h3>Web Integration Lab</h3>
+          <p>A demonstration of linking HTML, CSS, and JS.</p>
+        </div>
+        <div class="card">
+          <div class="stamp" aria-hidden="true"><span>2</span></div>
+          <h3>CineSpot</h3>
+          <p>Java-based system that streamlines cinema operations, from managing movies and showtimes to booking and tracking seat reservations.</p>
+        </div>
+        <div class="card">
+          <div class="stamp" aria-hidden="true"><span>3</span></div>
+          <h3>Soon...</h3>
+          <p>Working for awhile.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="panel">
       <h2>Contact</h2>
-      <!-- Dynamic Target 2: Interactive Alert Button -->
-      <button id="contact-btn">Get in Touch</button>
+      <p>Have a question or want to work together? Send a message.</p>
+      <form id="contact-form" novalidate>
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="field full">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <!-- Dynamic Target 2: Interactive Notification Button -->
+        <button id="contact-btn" type="submit">Get in Touch</button>
+      </form>
     </section>
   </main>
 
   <footer>
     <!-- Dynamic Target 3: Year Injection -->
     <p>&copy; <span id="year"></span> All Rights Reserved.</p>
+    <p><span id="address"></span>Purok-1, Bobongon, Santo Tomas, Davao del Norte</p>
   </footer>
+
+  <!-- Notifications are injected here by script.js -->
+  <div id="toast-region" aria-live="polite" aria-atomic="false"></div>
 
 </body>
 </html>
